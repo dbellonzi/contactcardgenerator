@@ -1,3 +1,29 @@
+.wrapper {
+    width: 970px;
+}
+form, .cards {
+    display: inline-block;
+    vertical-align: top;
+}
+form {
+    width: 400px;
+}
+form > *{
+    display: block;
+    margin: 10px;
+}
 .hide {
     display: none;
+}
+.cards {
+
+    width: 500px;
+}
+.acard {
+    width: 300px;
+    height: 125px;
+    border: 1px solid black;
+    box-shadow: 2px 2px;
+    margin: 10px;
+    text-align: center;
 }

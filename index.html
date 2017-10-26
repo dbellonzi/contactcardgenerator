@@ -5,36 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+
+        // function cardFlip(){
+        //     $('.acard').click(function(){
+        //             $(this).children().slideToggle(500);
+        //             console.log($(this).children());
+        //         })
+        // }
 
         $(document).ready(function(){            
             $('form').submit(function(){
                 var first = $('.first').val();
                 var last = $('.last').val();
                 var  description= $('.description').val();
-                $('.cards').append('<div class="show"><p>'+first+'</p><p>'+last+'</p></div><div class="hide"><p>'+description+'</p></div>');
-                $('.cards').children().slideToggle();
+                $('.cards').append('<div class="acard"><h3 class="show">'+first+' '+last+'</h3><p class="show">Click to see more!</p><p class="hide">'+description+'</p></div>');
+                // cardFlip();
                 $('.first, .last, .description').val("");
                 return false;
             })
 
-
+        $('.cards').on('click', '.acard', function(){
+                $(this).children().slideToggle(10);
+            })
         })
+
     </script>
 </head>
 <body>
-    <form>
-        <p>First Name:<input type="text" class="first"></p>
-        <p>Last Name:<input type="text" class="last"></p>
-        <p> Description:</p>
-        <textarea class="description" placeholder="Tell me things ;)"></textarea>
-        <input type="submit" value="Make it real">
-    </form>
+    <div class="wrapper">
+        <form>
+            <p>First Name:<input type="text" class="first"></p>
+            <p>Last Name:<input type="text" class="last"></p>
+            <p> Description:</p>
+            <textarea class="description" placeholder="Tell me things ;)"></textarea>
+            <input type="submit" value="Make it real">
+        </form>
 
-    <div class="cards">
+        <div class="cards">
 
-    </div>
+        </div>
+    </div> <!--end of wrapper-->
 </body>
 </html>
